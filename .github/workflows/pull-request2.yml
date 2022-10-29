@@ -16,6 +16,7 @@ jobs:
       with:
         token: ${{ secrets.SONAR_TOKEN }}
         projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        projectName: ${{ secrets.SONAR_PROJECT_KEY }}
         url: ${{ secrets.SONAR_URL }}
         enablePullRequestDecoration: true
         isCommunityEdition: true
