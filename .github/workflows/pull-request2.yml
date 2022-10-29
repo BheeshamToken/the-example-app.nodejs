@@ -1,0 +1,21 @@
+name: Analyze pull request
+
+on:
+
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches: [ master, development ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+  
+  steps:
+  - uses: philips-software/sonar-scanner-action
+    with:
+      token: ${{ secrets.SONAR_TOKEN }}
+      projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+      url: ${{ secrets.SONAR_URL }}
+      enablePullRequestDecoration: true
+      isCommunityEdition: true
