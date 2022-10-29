@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
   
   steps:
-- name: SonarQube Scanner Action
-  uses: philips-software/sonar-scanner-action@v1.5.1
+  - name: SonarQube Scanner Action
+    uses: philips-software/sonar-scanner-action@v1.5.1
     with:
       token: ${{ secrets.SONAR_TOKEN }}
       projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
